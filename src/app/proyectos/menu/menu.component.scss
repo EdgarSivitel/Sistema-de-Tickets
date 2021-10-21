@@ -1,0 +1,53 @@
+.card-local{
+    #FormLogin{
+        margin-top: 0px;
+        padding: 5px;
+    }
+    .btn-primary-local{
+        background-color: #f9b233;
+        width: 100%;
+        border-radius:0px;
+        box-shadow: 2px 2px rgba(0, 0, 0, 0.425);
+    }
+    h1{
+        font-size:30px;
+    }
+    
+    margin: 20px auto 0px auto;
+    width: 30rem;
+    border-radius: 15px;
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.616);
+}
+.division{
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#BackgroundDiv{
+    background-image: url("../../../assets/img/login.jpg");
+    height: 100%;
+}
+.img-header-local-menu{
+   
+    height: 50%;
+    width: 50%;
+    display: block;
+    margin: auto;
+    
+    background-color: rgba(156, 156, 156, 0);
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+#SivitelLetras{
+    padding-left:25px;
+    color:#f9b233;
+}
+.btnMenu{
+    color: white;
+}
+
+// ============================= barra de navegación ====================================
+
+//@import '../proyectos.scss';

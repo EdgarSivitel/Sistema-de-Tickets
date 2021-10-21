@@ -1,0 +1,122 @@
+<div id="BackgroundDiv">
+    <nav id="mainNav" class="navbar navbar-expand-lg" >
+        <div class="container-fluid" id="BarraNavegacion">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header"><font color="white">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button></font>
+                <a class="navbar-brand page-scroll" href="/home" id="SivitelLetras">SIVITEL</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right" id="MenuOpciones">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="/home">
+                            Inicio
+                        </a>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="/login">
+                            Regresar
+                        </a>
+
+                    </li>
+                  
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+    <div class="card">
+        <div class="container">
+            <div class="row ">
+                <div class="col-12" id="titulo">
+                    <h1 class=""> Registro</h1>
+                    <hr class="division">
+                </div>
+                
+            </div>
+           
+            <div class="row">
+                <div class="col-6">
+                    <label for="Nombre">Nombre completo:<font color="red">*</font></label>
+                    <input type="text" class="form-control" id="Nombre" [(ngModel)]="nombre">
+                </div>
+                
+                <div class="col-6">
+                    <label for="tipo">Tipo de Usuario<font color="red">*</font></label>
+                    <select class="form-select" aria-label="Default select example" id="tipo" [(ngModel)]="tipoUsuarioS" (change)=VerificarTipoUsuario()>
+                        <option selected value="1">Cliente</option>
+                        <option value="2">Ventas</option>
+                        <option value="3">Soporte</option>
+                        
+                      </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label for="Empresa">Empresa</label><i class="fas fa-info-circle icono" title="Facilita la identificación de la ubicación"></i>
+                    <input type="text" class="form-control" id="Empresa" [(ngModel)]="empresa">
+                </div>
+                <div class="col-6">
+                    <label for="Direccion">Direccion</label><i class="fas fa-info-circle icono" title="Dirección de la empresa sugerido para facilitar la creación del ticket"></i>
+                    <input type="text" class="form-control" id="Direccion" [(ngModel)]="direccion">
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label for="Correo">Correo<font color="red">*</font></label>
+                    <input type="email" class="form-control" id="Correo" [(ngModel)]="correo">
+                    <div class="alert alert-danger Alerta d-none" role="alert" id="CorreoIncorrecto">
+                        Correo Incorrecto
+                       </div>
+                </div>
+                <div class="col-6">
+                    <label for="usuario">Usuario<font color="red">*</font></label>
+                    <input type="text" class="form-control" id="usuario" [(ngModel)]="usuario" (blur)="revisarUsuario()">
+                    <div class="alert alert-danger Alerta d-none" role="alert" id="UsuarioExistente">
+                        Usuario Existente
+                       </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label for="Contraseña">Contraseña<font color="red">*</font></label>
+                    <input type="password" class="form-control" id="Contraseña" [(ngModel)]="contrasena">
+                </div>
+                <div class="col-6">
+                    <label for="Contraseña1">Confirmar contraseña<font color="red">*</font></label>
+                    <input type="password" class="form-control" id="Contraseña1" [(ngModel)]="contrasena1" (ngModelChange)="revisarContrasena()">
+                    <div class="alert alert-danger Alerta d-none" role="alert" id="PasswordIncorrecto">
+                        Contraseña no coinciden
+                       </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <font color="red"> <label for="Contraseña1">* Campos requeridos</label></font>
+                </div>
+            </div>
+            <div class="row">
+                <div class="alert alert-danger col-12 d-none" role="alert" id="DatosIncompletos">
+                   Datos incompletos 
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" class="btn btn-primary-local" (click)="registrar()">Registrar</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

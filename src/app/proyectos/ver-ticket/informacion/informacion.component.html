@@ -1,0 +1,65 @@
+
+    <div class="row ">
+        <div class="col-12">
+            <label for="Nombre">Nombre de quien reporta:</label>
+            <input type="text" class="form-control" id="Nombre" [(ngModel)]="nombre" name="nombre">
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label for="Fecha1">Fecha emisión:</label>
+            <input type="text" class="form-control" id="Fecha1" readonly [(ngModel)]="fechaHoy">
+        </div>
+        <div class="col-sm-3">
+            <label for="Nombre">Estatus:</label>
+            <input type="text" class="form-control" id="Estatus" readonly [(ngModel)]="estatus" name="estatus">
+        </div>
+        <div class="col-sm-3">
+            <label for="Fecha1">Encargado:</label>
+            <input type="text" class="form-control" id="Encargado" readonly [(ngModel)]="encargado">
+        </div>
+
+        <div class="col-sm-3">
+            <label for="Fecha2">Folio:</label>
+            <input type="text" class="form-control" id="folio" [(ngModel)]="folio" readonly>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <label for="empresa">Empresa:</label>
+            <input type="text" class="form-control" id="empresa" [(ngModel)]="empresa">
+        </div>
+        <div class="col-sm-3">
+            <label for="Ubicicacion">Ubicicación:</label>
+            <input type="text" class="form-control" id="Ubicicacion" [(ngModel)]="ubicacion" name="ubicacion">
+        </div>
+
+        <div class="col-sm-3">
+            <label for="tel">Telefono de contacto:</label>
+            <input type="text" class="form-control" id="tel" [(ngModel)]="telefono">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 form-floating ">
+
+            <textarea class="form-control textArea" placeholder="Leave a comment here" id="floatingTextarea"
+                [(ngModel)]="problema"></textarea>
+            <label for="floatingTextarea" class="labelTextArea">Problema</label>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 form-floating ">
+
+            <textarea class="form-control textArea" placeholder="Leave a comment here" id="floatingTextarea1"
+                [(ngModel)]="comentarios"></textarea>
+            <label for="floatingTextarea1" class="labelTextArea">Comentarios</label>
+
+        </div>
+    </div>
+   
+
+
+
+

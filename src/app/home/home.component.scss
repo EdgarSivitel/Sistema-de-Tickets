@@ -1,0 +1,50 @@
+#BarraNavegacion{
+    background-color:rgba(120, 120, 120, 0.2);
+}
+#SivitelLetras{
+    padding-left:25px;
+    color:#f9b233;
+}
+#MenuOpciones{
+    padding-right:25px;
+    a {
+        color:black;
+    }
+    .active{
+        color:#f9b233;
+    }
+    a:hover{color:#f9b233};
+}
+
+nav{
+    
+}
+orm,
+input {
+    text-align: center;
+    border-radius: 4px;
+    color: #000000;
+    font-size: 15px;
+}
+
+form,
+input:hover {
+    background-color: #ffffff;
+}
+
+form,
+input:active {
+    transform: translateY(4px);
+}
+.navbar-default,
+a{
+    -webkit-transition:all .35s;
+    -moz-transition:all .35s
+}
+header,
+header
+.header-content{
+    position:relative;
+    width:100%;
+    text-align:center
+}

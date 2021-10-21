@@ -1,0 +1,129 @@
+<div id="BackgroundDiv">
+    <nav id="mainNav" class="navbar navbar-expand-lg">
+        <div class="container-fluid" id="BarraNavegacion">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <font color="white">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" id="btnMenu">
+                        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                    </button>
+                </font>
+                <a class="navbar-brand page-scroll" (click)="Inicio()" id="SivitelLetras">SIVITEL</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right" id="MenuOpciones">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" (click)="Regresar()">
+                            Regresar
+                        </a>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" (click)="CerrarSesion()">
+                            Cerrar Sesión
+                        </a>
+
+                    </li>
+
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+    <div class="card">
+        <div class="container">
+
+            <div class="row ">
+                <div class="col-12" id="titulo">
+                    <h1 class=""> Reportes</h1>
+                    <hr class="division">
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <label for="Fecha2">Folio:</label>
+                    <input type="text" class="form-control" id="folio" [(ngModel)]="folio" readonly>
+                </div>
+                <div class="col-8 ">
+                    <label for="floatingTextarea" >Problema</label>
+                    <textarea class="form-control textArea" placeholder="" readonly id="floatingTextarea"
+                    [(ngModel)]="problema"></textarea>
+                
+                </div>
+            </div>
+            <div class="row" *ngIf="!EsFinalizado">
+                <div class="col-6">
+                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+                        <table class="table table-bordered table-striped mb-0">
+                          <thead>
+                            <tr >
+                              <th scope="col">Fecha</th>
+                              <th scope="col">Reporte</th>
+                              
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let reporte of reportesList">
+                             
+                              <td class="Fecha">{{reporte.fecha}}</td>
+                              <td>{{reporte.reporte}}</td>
+                           
+                            </tr>
+                            
+                            
+                          </tbody>
+                        </table>
+                      
+                      </div>
+
+                </div>
+                <div class="col-6 form-floating">
+                    <textarea class="form-control textArea" placeholder="Ingrese Reporte"  
+                    [(ngModel)]="reporte"></textarea>
+                    <label for="floatingTextarea1" class="labelTextArea">Reporte</label>
+                    <button type="button" class="btn btn-primary-AgregarReporte" id="BtnTomar" (click)="AgregarReporte()">Agregar Reporte</button>
+                    <button type="button" class="btn btn-danger-AgregarReporte" id="BtnFinalizar" (click)="FinalizarTrabajo()">Finalizar Trabajo</button>
+                </div>
+            </div>
+            
+            <div class="row" *ngIf="EsFinalizado">
+                <div class="col-12">
+                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+                        <table class="table table-bordered table-striped mb-0">
+                          <thead>
+                            <tr >
+                              <th scope="col">Fecha</th>
+                              <th scope="col">Reporte</th>
+                              
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let reporte of reportesList">
+                             
+                              <td>{{reporte.fecha}}</td>
+                              <td>{{reporte.reporte}}</td>
+                           
+                            </tr>
+                            
+                            
+                          </tbody>
+                        </table>
+                      
+                      </div>
+
+                </div>
+                </div>
+            
+
+        </div>
+    </div>

@@ -1,0 +1,85 @@
+<div id="BackgroundDiv">
+    <nav id="mainNav" class="navbar navbar-expand-lg">
+        <div class="container-fluid" id="BarraNavegacion">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <font color="white">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" id="btnMenu">
+                        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                    </button>
+                </font>
+                <a class="navbar-brand page-scroll" (click)="Inicio()" id="SivitelLetras">SIVITEL</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right" id="MenuOpciones">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="/login">
+                            Regresar
+                        </a>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="/home">
+                            Inicio
+                        </a>
+
+                    </li>
+
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+    <div class="card">
+        <div class="container">
+
+            <div class="row ">
+                <div class="col-12" id="titulo">
+                    <h1 class=""> Recuperar Contraseña</h1>
+                    <hr class="division">
+                </div>
+
+            </div>
+            <div class="row ">
+                <div class="col-12">
+                    <label for="Nombre">Correo:<font color="red">*</font></label>
+                    <input type="text" class="form-control" id="Correo" name="correo" [(ngModel)]="correo">
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label for="empresa">Confirmar correo:</label>
+                    <input type="text" class="form-control"  [(ngModel)]="correo1"  (ngModelChange)="revisarCorreo()">
+                    <div class="alert alert-danger Alerta d-none" role="alert" id="correoIncorrecto">
+                        Correo no coincide
+                       </div>
+                </div>
+                
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" class="btn btn-primary-local" id="BtnCrear"
+                        (click)="recuperarContrasena()">Recuperar</button>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border text-warning   d-none" role="status" id="Spinner">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>

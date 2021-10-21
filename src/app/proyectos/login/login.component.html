@@ -1,0 +1,64 @@
+<div id="BackgroundDiv">
+    <nav id="mainNav" class="navbar navbar-expand-lg" >
+        <div class="container-fluid" id="BarraNavegacion">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header"><font color="white">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button></font>
+                <a class="navbar-brand page-scroll" href="/home" id="SivitelLetras">SIVITEL</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right" id="MenuOpciones">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="/home">
+                            Inicio
+                        </a>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="/registro">
+                            Registrame
+                        </a>
+
+                    </li>
+                  
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+    <div class="card">
+        <form id="FormLogin">
+            <div class="mb-3">
+                <img class="img-header-local" src="assets/img/logo - PNG.png" alt="Logo">
+                <hr class="division">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Correo electronico o Usuario</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="correo" name="correo">
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword1"  [(ngModel)]="contrasena" name="contraseña" (keydown)="VerificarCaracteres($event)">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1"  (blur)="cambioCheck()">
+                <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+            </div>
+            <button type="button" class="btn btn-primary-local" (click)="iniciarSesion()">Inicar Sesión</button>
+            <div class="RecuperarContraseña">
+                <a href="/Recuperar-contrasena">Recuperar Contraseña</a>
+              </div>
+
+        </form>
+    </div>
+</div>
