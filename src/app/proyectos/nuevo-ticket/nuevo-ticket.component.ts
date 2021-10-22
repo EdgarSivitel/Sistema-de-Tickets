@@ -3,7 +3,7 @@ import { Usuario } from '../interface/usuario';
 import { TicketService } from '../services/ticket.service';
 import { UsuarioService } from '../services/usuario.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js'; 
-import { Ticket, TicketN } from '../interface/ticket';
+import { Ticket, TicketN, TicketNA } from '../interface/ticket';
 
 @Component({
   selector: 'app-nuevo-ticket',
@@ -12,6 +12,7 @@ import { Ticket, TicketN } from '../interface/ticket';
 })
 export class NuevoTicketComponent implements OnInit {
 
+  tipoUsuario: number;
   nombre: string;
   ubicacion: string;
   fechaHoy: Date;
@@ -21,6 +22,8 @@ export class NuevoTicketComponent implements OnInit {
   comentarios:string;
   idUsuario;
   folio:string;
+  responsable:string;
+  soporteUsuarios:Usuario[];
   constructor(private usuarioService:UsuarioService,private ticketService:TicketService) { 
    // this.iniciarPagina();
    this.problema="";
@@ -28,6 +31,7 @@ export class NuevoTicketComponent implements OnInit {
    this.ubicacion="";
    this.comentarios="";
    this.telefono="";
+   this.soporteUsuarios=new Array();
   }
 
   ngOnInit(): void {
@@ -60,10 +64,23 @@ export class NuevoTicketComponent implements OnInit {
           this.ubicacion=data.ubicacion;
           this.empresa=data.empresa;
         }
+        this.tipoUsuario=data.tipo;
 
        
       }
     });
+
+    this.usuarioService.obtenerUsuarios().subscribe((data:Usuario[])=>{
+      for(let usuario of data){
+        if(usuario.tipo==3){
+          this.soporteUsuarios.push(usuario);
+        }
+      }
+
+    });
+
+
+
   }
   CerrarSesion(){
     localStorage.removeItem("idUsuario");
@@ -89,15 +106,40 @@ export class NuevoTicketComponent implements OnInit {
         
       });  
     }else{
-      let data:TicketN={
-        solicitante:this.idUsuario,
-        fechaInicio: this.ObtenerFecha(),
-        ubicacion: this.ubicacion,
-        reporte: this.problema,
-        comentarios: this.comentarios,
-        telefono:this.telefono,
-        estatus: 'Pendiente' //Sin atender
-      };
+      var data;
+      if(this.tipoUsuario==4){
+         data={
+          solicitante:this.idUsuario,
+          fechaInicio: this.ObtenerFecha(),
+          ubicacion: this.ubicacion,
+          reporte: this.problema,
+          comentarios: this.comentarios,
+          telefono:this.telefono,
+          encargado:this.responsable,
+          estatus: 'Pendiente' //Sin atender
+        };
+       // console.log(data)
+      }else{
+        data={
+          solicitante:this.idUsuario,
+          fechaInicio: this.ObtenerFecha(),
+          ubicacion: this.ubicacion,
+          reporte: this.problema,
+          comentarios: this.comentarios,
+          telefono:this.telefono,
+          estatus: 'Pendiente' //Sin atender
+        };
+      }
+      
+
+
+
+
+
+
+
+
+
       this.ticketService.CrearTicket(data).subscribe((data: Ticket)=>{
       //  console.log(data);
         if(data._id!="Error"){

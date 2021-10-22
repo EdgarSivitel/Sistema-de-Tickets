@@ -42,7 +42,7 @@
 
 
    
-    <app-menu-cliente *ngIf="tipoUsuario==1"></app-menu-cliente>
+    <app-menu-cliente *ngIf="tipoUsuario==1  || tipoUsuario==4"></app-menu-cliente>
     <app-menu-ventas *ngIf="tipoUsuario==2"></app-menu-ventas>
     <app-menu-soporte *ngIf="tipoUsuario==3"></app-menu-soporte>
     

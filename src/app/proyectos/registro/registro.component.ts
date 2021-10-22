@@ -128,7 +128,7 @@ export class RegistroComponent implements OnInit {
 
 
   VerificarTipoUsuario(){
-    if(this.tipoUsuarioS=="3" || this.tipoUsuarioS=="2"){
+    if(this.tipoUsuarioS=="3" || this.tipoUsuarioS=="2" || this.tipoUsuarioS=="4"){
       this.empresa="SIVITEL";
       this.direccion="El Bajío # 117 Col. San Ignacio, Ags. C. P. 20326.";
 

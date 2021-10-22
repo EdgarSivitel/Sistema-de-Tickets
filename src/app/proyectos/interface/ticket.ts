@@ -7,6 +7,16 @@ export interface TicketN {
     estatus:string ,
     telefono:string
 }
+export interface TicketNA {
+    solicitante:string,
+    fechaInicio: string,
+    ubicacion: string,
+    reporte: string,
+    comentarios: string,
+    estatus:string ,
+    telefono:string,
+    encargado:string
+}
 
 export interface Ticket {
     _id:string,

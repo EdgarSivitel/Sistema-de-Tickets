@@ -64,7 +64,15 @@
                     <label for="empresa">Empresa:</label>
                     <input type="text" class="form-control" id="empresa" [(ngModel)]="empresa">
                 </div>
-                <div class="col-6">
+                <div *ngIf="tipoUsuario==4" class="col-6">
+                    <label for="Ubicicacion">Responsable:</label>
+                    <select class="form-select" aria-label="Default select example" id="tipo" [(ngModel)]="responsable">
+                        <option selected >Ninguno</option>
+                        <option *ngFor="let usuario of soporteUsuarios"  value="{{usuario._id}}">{{usuario.nombre}}</option>
+                        
+                      </select>
+                </div>
+                <div  *ngIf="tipoUsuario!=4" class="col-6">
                     <label for="Ubicicacion">Ubicicación:<font color="red">*</font></label>
                     <input type="text" class="form-control" id="Ubicicacion" [(ngModel)]="ubicacion" name="ubicacion">
                 </div>

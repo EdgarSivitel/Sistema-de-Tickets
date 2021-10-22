@@ -28,7 +28,8 @@ export class PerfilComponent implements OnInit {
         let tipoUsuario ={
           1:"Cliente",
           2:"Ventas",
-          3:"Soporte"
+          3:"Soporte",
+          4:"Administración"
         };
         this.tipo=tipoUsuario[data.tipo];
       }
